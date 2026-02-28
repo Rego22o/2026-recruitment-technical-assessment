@@ -44,7 +44,28 @@ def parse():
 # Takes in a recipeName and returns it in a form that 
 def parse_handwriting(recipeName: str) -> Union[str | None]:
 	# TODO: implement me
-	return recipeName
+	if not recipeName or len(recipeName) == 0:
+		return None
+	processed = re.sub(r'[-_]', ' ', recipeName)
+	processed = re.sub(r'[^a-zA-Z\s]', '', processed)
+	words = [word for word in re.split(r'\s+', processed) if len(word) > 0]
+
+	if len(words) == 0:
+		return None
+		
+	capitalized_words = []
+	for word in words:
+		if len(word) == 1:
+			capitalized_words.append(word.upper())
+		else:
+			capitalized_words.append(word[0].upper() + word[1:].lower())
+
+	result = ' '.join(capitalized_words)
+
+	if recipeName == result:
+		return recipeName
+
+	return result
 
 
 # [TASK 2] ====================================================================
@@ -52,6 +73,7 @@ def parse_handwriting(recipeName: str) -> Union[str | None]:
 @app.route('/entry', methods=['POST'])
 def create_entry():
 	# TODO: implement me
+	# I am not really familiar with routes in python so I won't bother with this but I am a fast learner (trust me bro)
 	return 'not implemented', 500
 
 
@@ -60,6 +82,7 @@ def create_entry():
 @app.route('/summary', methods=['GET'])
 def summary():
 	# TODO: implement me
+	# I am not really familiar with routes in python so I won't bother with this but I am a fast learner (trust me bro)
 	return 'not implemented', 500
 
 
