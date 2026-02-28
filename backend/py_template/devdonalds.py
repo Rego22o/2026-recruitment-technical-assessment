@@ -73,7 +73,7 @@ def parse_handwriting(recipeName: str) -> Union[str | None]:
 @app.route('/entry', methods=['POST'])
 def create_entry():
 	# TODO: implement me
-	# I am not really familiar with routes in python so I won't bother with this but I am a fast learner (trust me bro)
+	# I am not really familiar with routes in python so I won't attempt this but I am a fast learner (trust me bro)
 	return 'not implemented', 500
 
 
@@ -82,7 +82,7 @@ def create_entry():
 @app.route('/summary', methods=['GET'])
 def summary():
 	# TODO: implement me
-	# I am not really familiar with routes in python so I won't bother with this but I am a fast learner (trust me bro)
+	# I am not really familiar with routes in python so I won't attempt this but I am a fast learner (trust me bro)
 	return 'not implemented', 500
 
 
