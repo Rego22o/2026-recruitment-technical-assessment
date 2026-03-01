@@ -153,7 +153,7 @@ app.get("/summary", (req:Request, res:Response) => {
     return res.status(400).send();
   }
 
-  // cr
+  // create the map for the ingredients and the variabel to store the total cook time
   const ingredientsMap = new Map<string, number>();
   let totalCookTime = 0;
 
